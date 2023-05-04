@@ -14,22 +14,22 @@ const Chef = ({ chef }) => {
     <div>
       <Col>
         <Card>
-          <Card.Img variant="top" src="holder.js/100px160" />
-          <Card.Body>
+          <div>
             <img src={chef_picture} alt="" />
+          </div>
+          <Card.Body>
             <Card.Title>{chef_name}</Card.Title>
-            <Card.Text>
-              <div>
-              <p>Years of experience: {years_of_experience}</p>
-                </div>
-              <div>
-                <p><p>Numbers of recipes: {numbers_of_recipes}</p></p>
-              </div>
-              <div>
-                <p>Likes {likes}</p>
-              </div>
-            </Card.Text>
-            <button className="border-0 rounded bg-dark p-2 "><Link className="text-decoration-none text-white" to={`/chefs/${id}`}>View Recipe</Link></button>
+            <Card.Text>Years of experience: {years_of_experience}</Card.Text>
+            <Card.Text>Numbers of recipes: {numbers_of_recipes}</Card.Text>
+            <Card.Text>Likes {likes}</Card.Text>
+            <button className="border-0 rounded bg-dark p-2 ">
+              <Link
+                className="text-decoration-none text-white"
+                to={`/chefs/${id}`}
+              >
+                View Recipe
+              </Link>
+            </button>
           </Card.Body>
         </Card>
       </Col>

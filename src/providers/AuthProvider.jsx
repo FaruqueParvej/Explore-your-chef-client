@@ -6,7 +6,7 @@ import app from "../firebase/firebase.config";
 
 const auth = getAuth(app)
 const AuthProvider = ({children}) => {
-   const user={displayName:"Murikhan"}
+   const user=null;
     const authInfo={user,}
     return (
         <AuthContext.Provider value={authInfo}>

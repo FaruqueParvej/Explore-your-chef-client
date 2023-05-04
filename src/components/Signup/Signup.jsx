@@ -1,10 +1,30 @@
+import { Button,Form } from "react-bootstrap";
 
 
 const Signup = () => {
     return (
-        <div>
-            <h1>Please sign up</h1>
-        </div>
+        <div className="w-25 mx-auto my-5">
+      <Form>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" name="email" placeholder="Enter your email" />
+          
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" name="password" placeholder="Enter your password" />
+          <Form.Text className="text-muted">
+            never share your password with anyone else.
+          </Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="Accept all the policy" />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </div>
     );
 };
 
