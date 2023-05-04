@@ -26,7 +26,7 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto">
               <NavLink
-                className="text-white text-decoration-none"
+                className="text-white text-decoration-none mx-3"
                 exact
                 to="/"
                 activeClassName="active"

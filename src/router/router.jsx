@@ -17,7 +17,7 @@ import PrivateRoute from "./PrivateRoute";
         {
           path: "/",
           element: <Main></Main> ,
-          loader: ()=>fetch("http://localhost:5000/chefs")
+          loader: ()=>fetch("https://chef-recipe-server-faruqueparvej.vercel.app/chefs")
         },
         {
             path:"/blogs",
@@ -26,7 +26,7 @@ import PrivateRoute from "./PrivateRoute";
         {
             path:"/chefs/:id",
             element: <PrivateRoute> <Recipe></Recipe></PrivateRoute> ,
-            loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`),
+            loader: ({ params }) => fetch(`https://chef-recipe-server-faruqueparvej.vercel.app/chefs/${params.id}`),
         },
         {
             path:"/login",
