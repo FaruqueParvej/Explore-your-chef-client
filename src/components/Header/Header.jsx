@@ -1,11 +1,16 @@
 import { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user,logOut } = useContext(AuthContext);
+  const logOutHandler=()=>{
+    logOut()
+    .then()
+    .catch(error=>console.log(error));
+  }
   return (
     <div>
       <Navbar
@@ -20,12 +25,12 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto">
-              <Link to="/" className="text-white text-decoration-none px-4">
-                Home{" "}
-              </Link>
-              <Link to="/blogs" className="text-white text-decoration-none">
+            <NavLink className="text-white text-decoration-none" exact to="/" activeClassName="active">
+            Home
+          </NavLink>
+              <NavLink to="/blogs" activeClassName="active" className="text-white text-decoration-none">
                 Blogs
-              </Link>
+              </NavLink>
             </Nav>
             <Nav>
               <p className="text-white">
@@ -33,7 +38,7 @@ const Header = () => {
               </p>
               <Button className="mx-3" variant="primary">
                 {user ? (
-                  <Link to="/login" className="text-white text-decoration-none">
+                  <Link onClick={logOutHandler} to="/login" className="text-white text-decoration-none">
                     Log Out
                   </Link>
                 ) : (

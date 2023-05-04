@@ -1,4 +1,4 @@
-import { Card, Col, Row } from "react-bootstrap";
+import {  Row } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
 import Chef from "../Chef/Chef";
 

@@ -18,7 +18,7 @@ const Signup = () => {
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
-        console.log(createdUser.photo);
+        console.log(createdUser);
       })
       .catch((error) => {
         console.log(error);
