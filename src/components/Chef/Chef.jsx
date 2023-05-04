@@ -14,8 +14,8 @@ const Chef = ({ chef }) => {
     <div>
       <Col>
         <Card>
-          <div>
-            <img src={chef_picture} alt="" />
+          <div >
+            <img className = "img-fluid" src={chef_picture} alt="" />
           </div>
           <Card.Body>
             <Card.Title>{chef_name}</Card.Title>

@@ -5,12 +5,12 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
-  const { user,logOut } = useContext(AuthContext);
-  const logOutHandler=()=>{
+  const { user, logOut } = useContext(AuthContext);
+  const logOutHandler = () => {
     logOut()
-    .then()
-    .catch(error=>console.log(error));
-  }
+      .then()
+      .catch((error) => console.log(error));
+  };
   return (
     <div>
       <Navbar
@@ -20,25 +20,42 @@ const Header = () => {
         variant="dark"
         className="m-3 rounded"
       >
-        <Container >
+        <Container>
           <Navbar.Brand>Explore Your Chef</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto">
-            <NavLink className="text-white text-decoration-none" exact to="/" activeClassName="active">
-            Home
-          </NavLink>
-              <NavLink to="/blogs" activeClassName="active" className="text-white text-decoration-none">
+              <NavLink
+                className="text-white text-decoration-none"
+                exact
+                to="/"
+                activeClassName="active"
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/blogs"
+                activeClassName="active"
+                className="text-white text-decoration-none"
+              >
                 Blogs
               </NavLink>
             </Nav>
             <Nav>
               <p className="text-white">
-                <FaUserAlt style={{ fontSize: "2rem" }}></FaUserAlt>
+                {user ? (
+                  <img src={user?.photoURL} alt="" />
+                ) : (
+                  <FaUserAlt style={{ fontSize: "2rem" }}></FaUserAlt>
+                )}
               </p>
               <Button className="mx-3" variant="primary">
                 {user ? (
-                  <Link onClick={logOutHandler} to="/login" className="text-white text-decoration-none">
+                  <Link
+                    onClick={logOutHandler}
+                    to="/login"
+                    className="text-white text-decoration-none"
+                  >
                     Log Out
                   </Link>
                 ) : (
