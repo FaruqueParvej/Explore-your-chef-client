@@ -11,12 +11,15 @@ const Banner = () => {
             alt=""
           />
         </Col>
-        <Col className="fs-6 text-center d-flex flex-column justify-content-center align-items-center">
+        <Col  className="text-center d-flex flex-column justify-content-center align-items-center">
           <div>
-            <h1 className="fs-1 ">Explore</h1>
+            <h1 style={{ fontSize: '60px' }} >Explore</h1>
           </div>
           <div>
-            <h1>Your Chef</h1>
+            <h1 style={{ fontSize: '60px' }}>Your</h1>
+          </div>
+          <div>
+            <h1 style={{ fontSize: '60px' }}>Chef</h1>
           </div>
         </Col>
       </Row>
