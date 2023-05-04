@@ -28,7 +28,7 @@ const Signup = () => {
       });
   };
   return (
-    <div className="w-25 mx-auto my-5">
+    <div className="w-50 mx-auto my-5">
       <Form onSubmit={registerHandler}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>

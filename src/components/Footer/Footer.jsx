@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-
+import { FaFacebook, FaInstagram,FaTwitter,FaLinkedin } from "react-icons/fa";
 
 
 const Footer = () => {
@@ -16,8 +16,11 @@ const Footer = () => {
           </Col>
           <Col xs={12} md={4} className="text-center py-3">
             Follow us on social media:
-            <ul className="list-inline">
-            
+            <ul className="d-flex justify-content-center list-inline ">
+            <li><FaFacebook></FaFacebook></li>
+            <li className="mx-4"><FaInstagram></FaInstagram></li>
+            <li><FaTwitter></FaTwitter></li>
+            <li className="mx-4"><FaLinkedin></FaLinkedin></li>
             </ul>
           </Col>
         </Row>

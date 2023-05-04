@@ -20,11 +20,11 @@ const Header = () => {
         variant="dark"
         className="m-3 rounded"
       >
-        <Container>
+        <Container >
           <Navbar.Brand>Explore Your Chef</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mx-auto">
+            <Nav className="mx-auto d-flex flex-column flex-lg-row align-items-center">
               <NavLink
                 className="text-white text-decoration-none mx-3"
                 exact
@@ -41,20 +41,20 @@ const Header = () => {
                 Blogs
               </NavLink>
             </Nav>
-            <Nav>
-              <p className="text-white">
+            <Nav >
+              <div style={{width:"40px"}} className="text-white text-center mx-auto my-2 my-lg-0">
                 {user ? (
-                  <img src={user?.photoURL} alt="" />
+                  <img className="rounded-circle img-fluid border border-1 " src={user?.photoURL} alt="" />
                 ) : (
                   <FaUserAlt style={{ fontSize: "2rem" }}></FaUserAlt>
                 )}
-              </p>
-              <Button className="mx-3" variant="primary">
+              </div>
+              <Button className="mx-lg-3 my-3 my-lg-0" variant="primary">
                 {user ? (
                   <Link
                     onClick={logOutHandler}
                     to="/login"
-                    className="text-white text-decoration-none"
+                    className="text-white text-decoration-none "
                   >
                     Log Out
                   </Link>
