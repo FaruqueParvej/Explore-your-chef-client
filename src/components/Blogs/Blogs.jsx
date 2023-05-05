@@ -48,7 +48,7 @@ const Blogs = () => {
               for more precise control over user input, as well as enabling
               validation and other complex interactions. However, uncontrolled
               components can be easier to use and require less code, making them
-              a good choice for simple forms. Regenerate response
+              a good choice for simple forms.
             </p>
           </div>
         </div>
