@@ -36,16 +36,28 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto d-flex flex-column flex-lg-row align-items-center">
               <NavLink
-                className="text-white text-decoration-none mx-3"
+              style={({ isActive }) => {
+                return {
+                  fontWeight: isActive ? 'bold' : '',
+                  color: isActive ? 'yellow' : 'white',
+                };
+              }}
+                className=" text-decoration-none mx-3"
                 to="/"
                 
               >
                 Home
               </NavLink>
               <NavLink
+              style={({ isActive }) => {
+                return {
+                  fontWeight: isActive ? 'bold' : '',
+                  color: isActive ? 'yellow' : 'white',
+                };
+              }}
                 to="/blogs"
                 
-                className="text-white text-decoration-none"
+                className=" text-decoration-none"
               >
                 Blogs
               </NavLink>
