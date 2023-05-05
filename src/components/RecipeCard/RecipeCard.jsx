@@ -20,8 +20,8 @@ const [showToast,setShowToast]=useState(false)
           <Card.Body>
             <Card.Title>{recipe.name}</Card.Title>
             <ul>
-              {ingredients.map((ingredient) => (
-                <li>{ingredient}</li>
+              {ingredients.map((ingredient,index) => (
+                <li key={index}>{ingredient}</li>
               ))}
             </ul>
             <p>Method: {method}</p>

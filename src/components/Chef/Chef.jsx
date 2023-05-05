@@ -8,7 +8,7 @@ const Chef = ({ chef }) => {
     chef_picture,
     chef_name,
     likes,
-    numbers_of_recipes,
+    number_of_recipes,
     years_of_experience,
   } = chef;
   return (
@@ -27,7 +27,7 @@ const Chef = ({ chef }) => {
           <Card.Body>
             <Card.Title>{chef_name}</Card.Title>
             <Card.Text>Years of experience: {years_of_experience}</Card.Text>
-            <Card.Text>Numbers of recipes: {numbers_of_recipes}</Card.Text>
+            <Card.Text>Numbers of recipes: {number_of_recipes}</Card.Text>
             <Card.Text>Likes {likes}</Card.Text>
             <button className="border-0 rounded bg-dark p-2 ">
               <Link
