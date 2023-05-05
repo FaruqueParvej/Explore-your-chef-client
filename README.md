@@ -84,6 +84,12 @@ Install the dependencies:
 <br />
 • they can see the hot recipes of the selected chef.
 <br />
-• this website contains american popular dishes and desserts.
+• this website contains american desserts.
+<br />
+• this website contains american popular dishes.
+<br />
+• People can save their favorite recipe by clicking button.
+<br />
+• People can see home page without login.But they need to sign up to additional feature like view recipes.
 
 <p align="right">(<a href="#top">back to top</a>)</p>

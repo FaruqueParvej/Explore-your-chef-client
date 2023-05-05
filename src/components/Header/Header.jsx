@@ -51,7 +51,7 @@ const Header = () => {
               </NavLink>
             </Nav>
             <Nav >
-            <div   className="text-white text-center mx-auto px-2 my-2">
+              <div   className="text-white text-center mx-auto px-2">
                 {showName && <p>{user?.displayName}</p>}
               </div>
               <div onMouseOver={handleMouseOver}
