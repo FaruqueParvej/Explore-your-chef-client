@@ -6,7 +6,7 @@ const Dessert = () => {
   const [desserts, setDesserts] = useState([]);
 
   useEffect(() => {
-    fetch("/public/extraData.json")
+    fetch("/extraData.json")
       .then((res) => res.json())
       .then((data) => setDesserts(data));
   }, []);
