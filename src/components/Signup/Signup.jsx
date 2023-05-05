@@ -20,7 +20,8 @@ const Signup = () => {
     createUser(email, password)
       .then((result) => {
         if(result.user){
-          updateUser(photo);
+          updateUser(photo,name);
+          // console.log(photo,name);
           form.reset()
 
         }      

@@ -42,9 +42,10 @@ const AuthProvider = ({ children }) => {
     setIsLoading(true);
     return signOut(auth);
   };
-  const updateUser = (photo) => {
+  const updateUser = (photo,name) => {
     return updateProfile(auth.currentUser, {
       photoURL: photo,
+      displayName:name,
     });
   };
 

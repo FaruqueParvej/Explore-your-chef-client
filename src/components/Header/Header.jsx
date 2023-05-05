@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -6,6 +6,16 @@ import { FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user?.displayName);
+  const [showName, setShowName] = useState(false);
+  const handleMouseOver = () => {
+    setShowName(true);
+  };
+
+  const handleMouseOut = () => {
+    setShowName(false);
+  };
+
   const logOutHandler = () => {
     logOut()
       .then()
@@ -41,13 +51,18 @@ const Header = () => {
               </NavLink>
             </Nav>
             <Nav >
-              <div style={{width:"40px"}} className="text-white text-center mx-auto my-2 my-lg-0">
+            <div   className="text-white text-center mx-auto px-2 my-2">
+                {showName && <p>{user?.displayName}</p>}
+              </div>
+              <div onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut} style={{width:"40px"}} className="text-white text-center mx-auto my-2 my-lg-0">
                 {user ? (
               <img className="rounded-circle img-fluid " src={user?.photoURL} alt="" />
                 ) : (
                   <FaUserAlt style={{ fontSize: "2rem" }}></FaUserAlt>
                 )}
               </div>
+              
               <Button className="mx-lg-3 my-3 my-lg-0" variant="primary">
                 {user ? (
                   <Link
