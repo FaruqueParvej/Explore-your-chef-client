@@ -13,9 +13,9 @@ const Chef = ({ chef }) => {
   return (
     <div>
       <Col>
-        <Card>
+        <Card className="shadow-lg">
           <div >
-            <img className = "img-fluid" src={chef_picture} alt="" />
+            <img style={{height:"300px"}} className = "img-fluid rounded" src={chef_picture} alt="" />
           </div>
           <Card.Body>
             <Card.Title>{chef_name}</Card.Title>
