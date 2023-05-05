@@ -1,4 +1,5 @@
 import { Card, Col } from "react-bootstrap";
+import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 
 const Chef = ({ chef }) => {
@@ -14,9 +15,15 @@ const Chef = ({ chef }) => {
     <div>
       <Col>
         <Card className="shadow-lg">
-          <div >
-            <img style={{height:"300px"}} className = "img-fluid rounded" src={chef_picture} alt="" />
-          </div>
+          <LazyLoad>
+            <img
+              style={{ height: "300px" }}
+              className="img-fluid rounded"
+              src={chef_picture}
+              alt=""
+            />
+          </LazyLoad>
+
           <Card.Body>
             <Card.Title>{chef_name}</Card.Title>
             <Card.Text>Years of experience: {years_of_experience}</Card.Text>

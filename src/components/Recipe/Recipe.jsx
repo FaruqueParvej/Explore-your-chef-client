@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import RecipeCard from "../RecipeCard/RecipeCard";
 import { Row } from "react-bootstrap";
+import LazyLoad from "react-lazy-load";
 
 
 const Recipe = () => {
@@ -18,11 +19,11 @@ const Recipe = () => {
     // console.log(id);
     // console.log(recipe);
     return (
-        <div className="mx-sm-4 mx-2">  
-            <div >
-
-            <img className="img-fluid mx-auto mx-3" src={chef_picture} alt="" />
-            </div>
+        <div className="mx-sm-4 mx-2"> 
+        <LazyLoad>
+        <img className="img-fluid mx-auto mx-3" src={chef_picture} alt="" />
+          </LazyLoad> 
+            
             <div>
             <p>{chef_name}</p>
             <p>Bio: {bio}</p>
