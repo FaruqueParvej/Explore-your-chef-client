@@ -7,7 +7,7 @@ import CarouselSection from "../ExtraSection/CarouselSection";
 
 const Main = () => {
   const chefs = useLoaderData();
-  console.log(chefs);
+  // console.log(chefs);
 
   return (
     <div>

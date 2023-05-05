@@ -11,7 +11,7 @@ const Dessert = () => {
       .then((data) => setDesserts(data));
   }, []);
 
-  console.log(desserts);
+  // console.log(desserts);
 
   return (
     <div className="m-3 rounded">

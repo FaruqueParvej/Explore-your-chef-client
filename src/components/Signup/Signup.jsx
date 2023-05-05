@@ -1,11 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Signup = () => {
   const { createUser,updateUser } = useContext(AuthContext);
-
+  const [errorMessage,setErrorMessage]=useState("");
+  
+  
   const registerHandler = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -14,23 +16,25 @@ const Signup = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password,photo,name);
-   
+    setErrorMessage("")
     createUser(email, password)
       .then((result) => {
         if(result.user){
-          updateUser(photo)
-        }
-       
-       
+          updateUser(photo);
+          form.reset()
+
+        }      
       })
       .catch((error) => {
-        console.log(error);
+        const errorMessage = error.message;
+        
+        setErrorMessage(errorMessage);
       });
   };
   return (
     <div className="w-50 mx-auto my-5">
       <Form onSubmit={registerHandler}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" >
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
@@ -38,7 +42,7 @@ const Signup = () => {
             placeholder="Enter your Name" required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" >
           <Form.Label>Photo Url</Form.Label>
           <Form.Control
             type="text"
@@ -46,7 +50,7 @@ const Signup = () => {
             placeholder="photo Url" required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" >
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
@@ -74,6 +78,10 @@ const Signup = () => {
           Sign Up
         </Button>
         <br />
+        <Form.Text className="text-danger">
+          {errorMessage}
+        </Form.Text>
+        <br/>
         <Form.Text className="text-muted">
           Already have an account <Link to="/login">Login</Link>
         </Form.Text>

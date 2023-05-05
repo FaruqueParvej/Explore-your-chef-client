@@ -18,8 +18,12 @@ const Recipe = () => {
     // console.log(id);
     // console.log(recipe);
     return (
-        <div>
-            <img src={chef_picture} alt="" />
+        <div className="mx-sm-4 mx-2">  
+            <div >
+
+            <img className="img-fluid mx-auto mx-3" src={chef_picture} alt="" />
+            </div>
+            <div>
             <p>{chef_name}</p>
             <p>Bio: {bio}</p>
             <p>Likes: {likes}</p>
@@ -30,6 +34,8 @@ const Recipe = () => {
                 recipes.map(recipe=><RecipeCard key={recipe.name} recipe={recipe}></RecipeCard>)
             }
             </Row>
+            </div>
+            
         </div>
     );
 };

@@ -27,15 +27,14 @@ const Header = () => {
             <Nav className="mx-auto d-flex flex-column flex-lg-row align-items-center">
               <NavLink
                 className="text-white text-decoration-none mx-3"
-                exact
                 to="/"
-                activeClassName="active"
+                
               >
                 Home
               </NavLink>
               <NavLink
                 to="/blogs"
-                activeClassName="active"
+                
                 className="text-white text-decoration-none"
               >
                 Blogs
@@ -44,7 +43,7 @@ const Header = () => {
             <Nav >
               <div style={{width:"40px"}} className="text-white text-center mx-auto my-2 my-lg-0">
                 {user ? (
-                  <img className="rounded-circle img-fluid border border-1 " src={user?.photoURL} alt="" />
+              <img className="rounded-circle img-fluid " src={user?.photoURL} alt="" />
                 ) : (
                   <FaUserAlt style={{ fontSize: "2rem" }}></FaUserAlt>
                 )}

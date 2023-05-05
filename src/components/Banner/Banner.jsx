@@ -16,7 +16,7 @@ const Banner = () => {
             <h1 style={{ fontSize: '60px' }} >Explore</h1>
           </div>
           <div>
-            <h1 style={{ fontSize: '60px' }}>Your</h1>
+            <h1 style={{ fontSize: '60px' }}>Your American</h1>
           </div>
           <div>
             <h1 style={{ fontSize: '60px' }}>Chef</h1>

@@ -8,6 +8,7 @@ import Recipe from "../components/Recipe/Recipe";
 import Login from "../components/Login/Login";
 import Signup from "../components/Signup/Signup";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
   const router = createBrowserRouter([
     {
@@ -35,7 +36,11 @@ import PrivateRoute from "./PrivateRoute";
         {
             path:"/signup",
             element:<Signup></Signup>
-        }
+        },
+        {
+          path: "*",
+          element: <ErrorPage></ErrorPage>,
+        },
     ]
     },
   ]);

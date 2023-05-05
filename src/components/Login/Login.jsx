@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -7,9 +7,11 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
   const { logIn, googleLogIn,githubLogIn } = useContext(AuthContext);
+  const [errorMessage,setErrorMessage]=useState("");
+
   const navigate = useNavigate();
   const location = useLocation();
-  console.log("login page", location);
+  // console.log("login page", location);
   let from = location.state?.from?.pathname || "/";
  
   const googleProvider = new GoogleAuthProvider();
@@ -20,9 +22,15 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         // console.log(loggedUser);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        const errorMessage = error.message;
+        
+        
+        console.log(errorMessage);
+        // setErrorMessage(errorMessage);
+
       });
   };
 
@@ -31,6 +39,7 @@ const Login = () => {
     .then(result=>{
       const loggedUser=result.user;
       console.log(loggedUser);
+      navigate(from, { replace: true });
     })
     .catch(error=>{
       console.log(error);
@@ -54,12 +63,15 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        const errorMessage = error.message;
+        
+        setErrorMessage(errorMessage);
       });
   };
   return (
     <div className="w-50 mx-auto my-5">
       <Form onSubmit={logInHandler}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" >
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
@@ -67,7 +79,7 @@ const Login = () => {
             placeholder="Enter your email"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" >
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
@@ -78,7 +90,7 @@ const Login = () => {
             never share your password with anyone else.
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Group className="mb-3" >
           <Form.Check type="checkbox" label="Remember Me" />
         </Form.Group>
         <div className="d-flex flex-column ">
@@ -102,6 +114,10 @@ const Login = () => {
           </Button>
         </div>
         <br />
+        <Form.Text className="text-danger">
+          {errorMessage}
+        </Form.Text>
+        <br/>
         <Form.Text className="text-muted">
           Don't have an account <Link to="/signup">Register</Link>
         </Form.Text>
